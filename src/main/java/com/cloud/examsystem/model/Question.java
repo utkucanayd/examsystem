@@ -1,4 +1,4 @@
-package com.cloud.examsystem.entity;
+package com.cloud.examsystem.model;
 
 
 import lombok.Data;
@@ -11,8 +11,14 @@ import javax.persistence.*;
 public class Question {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "question_id")
     private Long questionId;
+
+    @Column(name = "question_text",
+    nullable = false,
+    columnDefinition = "TEXT")
     private String questionText;
+
     private Double penalty;
     private Double grade;
 
