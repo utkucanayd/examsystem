@@ -5,6 +5,7 @@ import lombok.Data;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.Date;
 
 
 @Entity
@@ -24,7 +25,7 @@ public class StudentExam{
     @JoinColumn(name = "exam_id")
     private Exam exam;
 
-    private java.util.Date date;
+    private Date date;
     private Double grade;
 
 

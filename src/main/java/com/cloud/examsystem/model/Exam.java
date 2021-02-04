@@ -1,8 +1,7 @@
 package com.cloud.examsystem.model;
 
-import lombok.Cleanup;
-import lombok.Data;
 
+import lombok.Data;
 import javax.persistence.*;
 import java.util.Date;
 import java.util.Set;
@@ -30,6 +29,10 @@ public class Exam {
 
     @OneToMany(mappedBy = "exam")
     private Set<StudentExam> grades;
+
+    @OneToMany(mappedBy = "exam")
+    private Set<Question> questions;
+
 
 
 

@@ -1,25 +1,28 @@
 package com.cloud.examsystem.model;
 
 
+import com.cloud.examsystem.keys.OptionKey;
 import lombok.Data;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table(name = "es_Option")
 @Data
 public class Option {
-    @Id
-    @Column(name = "option_id")
-    private Long optionId;
+    @EmbeddedId
+    private OptionKey Id;
 
     @Column(name="option_text")
     private String optionText;
 
     @Column(name = "is_answer")
     private Boolean isAnswer;
+
+    @ManyToOne
+    @MapsId("question")
+    @JoinColumn(name = "question")
+    private Question question;
+
 
 }
