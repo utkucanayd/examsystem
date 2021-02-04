@@ -24,13 +24,13 @@ public class Exam {
     @Column(name = "end_date")
     private Date endDate;
 
-    @OneToMany(mappedBy = "exam")
+   @OneToMany
     private Set<StudentExam> dates;
 
-    @OneToMany(mappedBy = "exam")
+    @OneToMany
     private Set<StudentExam> grades;
 
-    @OneToMany(mappedBy = "exam")
+    @OneToMany
     private Set<Question> questions;
 
 

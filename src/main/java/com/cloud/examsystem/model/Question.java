@@ -23,11 +23,10 @@ public class Question {
     private Double grade;
 
     @ManyToOne
-    @MapsId("examId")
     @JoinColumn(name="exam_id")
     private Exam exam;
 
-    @OneToMany(mappedBy = "question")
+    @OneToMany
     private Set<Option> options;
 
 

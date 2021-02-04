@@ -12,16 +12,14 @@ import java.util.Date;
 @Table(name = "es_StudentExam")
 @Data
 public class StudentExam{
-    @EmbeddedId
-    private StudentExamKey id;
+    @Id
+    private Long id;
 
-    @ManyToOne
-    @MapsId("userId")
+   @ManyToOne
     @JoinColumn(name = "user_id")
     private Student student;
 
     @ManyToOne
-    @MapsId("examId")
     @JoinColumn(name = "exam_id")
     private Exam exam;
 

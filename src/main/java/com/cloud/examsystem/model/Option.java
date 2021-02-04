@@ -20,8 +20,7 @@ public class Option {
     private Boolean isAnswer;
 
     @ManyToOne
-    @MapsId("question")
-    @JoinColumn(name = "question")
+    @JoinColumn(name = "question_id")
     private Question question;
 
 
