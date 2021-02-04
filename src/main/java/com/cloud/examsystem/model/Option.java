@@ -1,17 +1,19 @@
 package com.cloud.examsystem.model;
 
 
-import com.cloud.examsystem.keys.OptionKey;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.util.Set;
 
 @Entity
-@Table(name = "es_Option")
+@Table(name = "es_option")
 @Data
 public class Option {
-    @EmbeddedId
-    private OptionKey Id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name="option_id")
+    private Long optionId;
 
     @Column(name="option_text")
     private String optionText;
@@ -19,9 +21,12 @@ public class Option {
     @Column(name = "is_answer")
     private Boolean isAnswer;
 
-    @ManyToOne
-    @JoinColumn(name = "question_id")
-    private Question question;
+    @OneToMany
+    @JoinColumn(nullable = false)
+    private Set<StudentAnswer> studentAnswers;
+
+
+
 
 
 }

@@ -8,17 +8,17 @@ import java.util.Set;
 
 
 @EqualsAndHashCode(callSuper = true)
+@Table(name = "es_student")
 @Entity
 @Data
-public class Student extends EsUser {
+public class Student extends User {
     @Column
     private String studentNumber;
 
-    @OneToMany
-    private Set<StudentExam> dates;
+   @OneToMany
+    @JoinColumn(nullable = false)
+    private Set<StudentExam> studentExams;
 
-    @OneToMany
-    private Set<StudentExam> grades;
 
 
 }

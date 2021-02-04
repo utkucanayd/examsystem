@@ -1,7 +1,5 @@
 package com.cloud.examsystem.model;
 
-
-import com.cloud.examsystem.keys.QuestionKey;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -11,23 +9,23 @@ import java.util.Set;
 @Table(name = "es_Question")
 @Data
 public class Question {
-    @EmbeddedId
-    private QuestionKey Id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "question_id")
+    private Long questionId;
 
     @Column(name = "question_text",
     nullable = false,
     columnDefinition = "TEXT")
     private String questionText;
-
     private Double penalty;
     private Double grade;
-
-    @ManyToOne
-    @JoinColumn(name="exam_id")
-    private Exam exam;
-
     @OneToMany
+    @JoinColumn(nullable = false)
     private Set<Option> options;
 
+    @OneToMany
+    @JoinColumn(nullable = false)
+    private Set<StudentAnswer> studentAnswers;
 
 }
