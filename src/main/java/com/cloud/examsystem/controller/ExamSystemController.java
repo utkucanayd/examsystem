@@ -2,15 +2,20 @@ package com.cloud.examsystem.controller;
 
 import com.cloud.examsystem.model.User;
 import com.cloud.examsystem.service.ExamSystemService;
+import lombok.SneakyThrows;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletRequest;
+import java.net.http.HttpRequest;
+import java.net.http.HttpResponse;
 import java.util.List;
 
 @RestController
-@RequestMapping("api/home")
+@RequestMapping("api/")
+@CrossOrigin("*")
 public class ExamSystemController {
 
     private final ExamSystemService examSystemService;
@@ -21,9 +26,11 @@ public class ExamSystemController {
     }
 
 
-    @GetMapping
-    public List<User> getUsers(){
-        return examSystemService.getUsers();
+    @GetMapping("/user")
+    @SneakyThrows
+    public ResponseEntity<?> getUsers(){
+        return ResponseEntity.ok(examSystemService.getUsers());
     }
+
 
 }

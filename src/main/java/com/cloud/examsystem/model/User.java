@@ -22,13 +22,4 @@ public class User {
 
     private String name;
 
-    public User(Long userId, UserType userType, String name) {
-        this.userId = userId;
-        this.userType = userType;
-        this.name = name;
-    }
-
-    public User() {
-
-    }
 }
