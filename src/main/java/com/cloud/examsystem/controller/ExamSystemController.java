@@ -32,5 +32,12 @@ public class ExamSystemController {
         return ResponseEntity.ok(examSystemService.getUsers());
     }
 
+    @PostMapping("/adduser")
+    @SneakyThrows
+    public ResponseEntity<?> addUser(@RequestBody User user){
+        System.out.println(user.getName());
+        examSystemService.addUser(user);
+        return ResponseEntity.ok("OK");
+    }
 
 }
