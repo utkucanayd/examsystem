@@ -1,17 +1,13 @@
 package com.cloud.examsystem.controller;
 
-import com.cloud.examsystem.model.User;
+import com.cloud.examsystem.model.Exam;
 import com.cloud.examsystem.service.ExamSystemService;
 import lombok.SneakyThrows;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import javax.servlet.http.HttpServletRequest;
-import java.net.http.HttpRequest;
-import java.net.http.HttpResponse;
-import java.util.List;
+
 
 @RestController
 @RequestMapping("api/")
@@ -34,9 +30,9 @@ public class ExamSystemController {
 
     @PostMapping("/adduser")
     @SneakyThrows
-    public ResponseEntity<?> addUser(@RequestBody User user){
-        System.out.println(user.getName());
-        examSystemService.addUser(user);
+    public ResponseEntity<?> addExam(@RequestBody Exam exam){
+        
+        examSystemService.addExam(exam);
         return ResponseEntity.ok("OK");
     }
 

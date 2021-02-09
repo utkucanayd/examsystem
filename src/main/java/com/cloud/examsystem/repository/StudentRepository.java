@@ -1,7 +1,9 @@
 package com.cloud.examsystem.repository;
 
+import com.cloud.examsystem.model.Student;
+import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface StudentRepository extends UserRepository {
+public interface StudentRepository extends JpaRepository<Student,Long> {
 }

@@ -16,8 +16,6 @@ import java.util.Set;
 @Data
 public class Instructor extends User {
 
-    @OneToMany
-    @JoinColumn(nullable = false)
-    private Set<Exam> exams;
+
 
 }

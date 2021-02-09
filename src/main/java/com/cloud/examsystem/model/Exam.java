@@ -24,13 +24,15 @@ public class Exam {
     @Column(name = "end_date")
     private Date endDate;
 
-
-    @OneToMany
+    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JoinColumn(nullable = false)
     private Set<Question> questions;
     @OneToMany
     @JoinColumn(nullable = false)
     private Set<StudentExam> studentExams;
+    @ManyToOne
+    @JoinColumn(nullable = false)
+    private Instructor instructor;
 
 
 }

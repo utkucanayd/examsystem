@@ -20,7 +20,7 @@ public class Question {
     private String questionText;
     private Double penalty;
     private Double grade;
-    @OneToMany
+    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JoinColumn(nullable = false)
     private Set<Option> options;
 

@@ -26,7 +26,4 @@ public class Option {
     private Set<StudentAnswer> studentAnswers;
 
 
-
-
-
 }
