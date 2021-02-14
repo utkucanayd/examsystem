@@ -3,13 +3,15 @@ package com.cloud.examsystem.model;
 
 import lombok.Data;
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.Date;
 import java.util.Set;
 
 @Entity
 @Table(name = "es_Exam")
 @Data
-public class Exam {
+
+public class Exam implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "exam_id")

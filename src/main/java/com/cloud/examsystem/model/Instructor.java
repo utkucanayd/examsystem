@@ -7,6 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import java.io.Serializable;
 import java.util.Set;
 
 
@@ -14,7 +15,7 @@ import java.util.Set;
 @Table(name = "es_instructor")
 @Entity
 @Data
-public class Instructor extends User {
+public class Instructor extends User implements Serializable {
 
 
 

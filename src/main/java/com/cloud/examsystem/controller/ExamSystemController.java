@@ -7,6 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.websocket.server.PathParam;
+import java.util.List;
 
 
 @RestController
@@ -28,12 +30,24 @@ public class ExamSystemController {
         return ResponseEntity.ok(examSystemService.getUsers());
     }
 
-    @PostMapping("/adduser")
+    @PostMapping("/create/exam")
     @SneakyThrows
     public ResponseEntity<?> addExam(@RequestBody Exam exam){
-        
         examSystemService.addExam(exam);
         return ResponseEntity.ok("OK");
+    }
+    @GetMapping("/exams")
+    @SneakyThrows
+    public ResponseEntity<?> getExams(){
+        List<Exam> exams=examSystemService.getExams();
+        return ResponseEntity.ok(exams);
+    }
+    @GetMapping(value = "/exam/{examId}")
+    @SneakyThrows
+    public ResponseEntity<?> getExam(@PathVariable("examId") Long examId){
+        System.out.println(examId);
+        Exam deneme=examSystemService.getExam(examId);
+        return ResponseEntity.ok(deneme);
     }
 
 }

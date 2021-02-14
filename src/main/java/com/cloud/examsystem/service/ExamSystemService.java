@@ -28,7 +28,15 @@ public class ExamSystemService {
         return userRepository.findAll();
     }
 
+    public List<Exam> getExams(){
+        return examRepository.findAll();
+    }
+    public Exam getExam(Long examId){
+        return examRepository.getByExamId(examId).get();
+    }
+
     public void addExam(Exam exam){
+
         exam.setInstructor(instructorRepository.getOne(1L));
         examRepository.save(exam);
     }
