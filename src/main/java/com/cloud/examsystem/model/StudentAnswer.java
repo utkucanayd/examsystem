@@ -16,5 +16,18 @@ public class StudentAnswer implements Serializable {
     @Column(name = "student_answer_id")
     private Long studentAnswerId;
 
+    @ManyToOne
+    @JoinColumn(nullable = false)
+    private Question question;
+
+    @ManyToOne
+    @JoinColumn(nullable = false)
+    private Option option;
+
+
+
+
+
+
 
 }

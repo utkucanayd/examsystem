@@ -1,6 +1,8 @@
 package com.cloud.examsystem.controller;
 
+import com.cloud.examsystem.dto.StudentExamDTO;
 import com.cloud.examsystem.model.Exam;
+import com.cloud.examsystem.model.StudentExam;
 import com.cloud.examsystem.service.ExamSystemService;
 import lombok.SneakyThrows;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -36,6 +38,12 @@ public class ExamSystemController {
         examSystemService.addExam(exam);
         return ResponseEntity.ok("OK");
     }
+    @PostMapping("/take/exam")
+    @SneakyThrows
+    public ResponseEntity<?> takeExam(@RequestBody StudentExamDTO studentExamDTO){
+        examSystemService.takeExam(studentExamDTO);
+        return ResponseEntity.ok("OK");
+    }
     @GetMapping("/exams")
     @SneakyThrows
     public ResponseEntity<?> getExams(){
@@ -45,9 +53,7 @@ public class ExamSystemController {
     @GetMapping(value = "/exam/{examId}")
     @SneakyThrows
     public ResponseEntity<?> getExam(@PathVariable("examId") Long examId){
-        System.out.println(examId);
-        Exam deneme=examSystemService.getExam(examId);
-        return ResponseEntity.ok(deneme);
+        return ResponseEntity.ok(examSystemService.getExam(examId));
     }
 
 }

@@ -18,7 +18,13 @@ public class StudentExam implements Serializable {
     private Date date;
     private Double grade;
 
-    @OneToMany
+    @ManyToOne
+    @JoinColumn(nullable = false)
+    private Student student;
+    @ManyToOne
+    @JoinColumn(nullable = false)
+    private Exam exam;
+    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JoinColumn(nullable = false)
     private Set<StudentAnswer> studentAnswers;
 

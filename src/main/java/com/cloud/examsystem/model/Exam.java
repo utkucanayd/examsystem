@@ -29,9 +29,6 @@ public class Exam implements Serializable {
     @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JoinColumn(nullable = false)
     private Set<Question> questions;
-    @OneToMany
-    @JoinColumn(nullable = false)
-    private Set<StudentExam> studentExams;
     @ManyToOne
     @JoinColumn(nullable = false)
     private Instructor instructor;

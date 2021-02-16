@@ -9,4 +9,5 @@ import java.util.Optional;
 @Repository
 public interface ExamRepository extends JpaRepository<Exam,Long> {
     Optional<Exam> getByExamId(Long id);
+
 }

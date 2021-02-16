@@ -22,9 +22,7 @@ public class Option implements Serializable {
     @Column(name = "is_answer")
     private Boolean isAnswer;
 
-    @OneToMany
-    @JoinColumn(nullable = false)
-    private Set<StudentAnswer> studentAnswers;
+
 
 
 }

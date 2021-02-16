@@ -16,10 +16,6 @@ public class Student extends User implements Serializable {
     @Column
     private String studentNumber;
 
-   @OneToMany
-    @JoinColumn(nullable = false)
-    private Set<StudentExam> studentExams;
-
 
 
 }

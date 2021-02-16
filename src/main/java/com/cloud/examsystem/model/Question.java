@@ -20,12 +20,10 @@ public class Question implements Serializable {
     private String questionText;
     private Double penalty;
     private Double grade;
+
     @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JoinColumn(nullable = false)
     private Set<Option> options;
 
-    @OneToMany
-    @JoinColumn(nullable = false)
-    private Set<StudentAnswer> studentAnswers;
 
 }
