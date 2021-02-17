@@ -46,8 +46,8 @@ public class ExamSystemController {
     }
     @GetMapping("/exams")
     @SneakyThrows
-    public ResponseEntity<?> getExams(){
-        List<Exam> exams=examSystemService.getExams();
+    public ResponseEntity<?> getValidExams(){
+        List<Exam> exams=examSystemService.getValidExams();
         return ResponseEntity.ok(exams);
     }
     @GetMapping(value = "/exam/{examId}")

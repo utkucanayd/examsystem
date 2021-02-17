@@ -39,6 +39,19 @@ public class ExamSystemService {
 
     public List<Exam> getExams() {
         return examRepository.findAll();
+
+    }
+    public List<Exam> getValidExams(){
+        Date now= new Date();
+        List<Exam> allExamList=examRepository.findAll();
+        List<Exam> examList=new ArrayList<>();
+        for (Exam exam:
+             allExamList) {
+            if(exam.getStartDate().compareTo(now)<=0 && exam.getEndDate().compareTo(now)>0){
+                examList.add(exam);
+            }
+        }
+        return examList;
     }
 
     public Exam getExam(Long examId) {
