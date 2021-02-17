@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: org.springframework.data:spring-data-commons:2.3.7.BUILD-SNAPSHOT">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/springframework/data/spring-data-commons/2.3.7.BUILD-SNAPSHOT/spring-data-commons-2.3.7.BUILD-20210216.185645-101.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/org/springframework/data/spring-data-commons/2.3.7.BUILD-SNAPSHOT/spring-data-commons-2.3.7.BUILD-20210216.185645-101-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/springframework/data/spring-data-commons/2.3.7.BUILD-SNAPSHOT/spring-data-commons-2.3.7.BUILD-20210216.185645-101-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

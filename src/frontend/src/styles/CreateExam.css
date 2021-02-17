@@ -1,0 +1,64 @@
+.addOption{
+    padding:25px 25px 25px 25px;
+    margin-bottom: 50px;
+    margin-top: 20px;
+    border-radius: 10px;
+    border: slategray;
+    background: azure;
+    margin-left: 20px;
+}
+.addedQuestions{
+    padding:25px 25px 25px 25px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.question{
+    margin-bottom: 30px;
+    padding: 10px 10px 10px 10px;
+    background: #ccfcc1;
+    border-radius: 20px;
+}
+.options{
+    margin-top: 10px;
+    margin-left: 55px;
+}
+.addedOptions{
+
+    border-radius: 10px;
+    background: #ccfcc1;
+    margin-top: 10px;
+    margin-left: 20px;
+}
+.addQuestion{
+
+    padding:25px 25px 25px 25px;
+    margin-bottom: 50px;
+    border-radius: 20px;
+    background: #aafdfd;
+}
+.examInfo{
+    padding:25px 25px 25px 25px;
+    margin-bottom: 50px;
+    margin-top: 50px;
+    border-radius: 20px;
+    background: #aafdfd;
+}
+.createExam{
+    padding: 10px 25px 25px 25px;
+
+}
+.deneme{
+    margin-left: 10px;
+    margin-top: 7px;
+}
+.checkbox{
+    margin-right: 10px;
+    margin-top: 10px;
+}
+.button{
+    margin: 10px 10px 10px 10px;
+}
+.submitButton{
+    width: 200px;
+    height: 75px;
+}

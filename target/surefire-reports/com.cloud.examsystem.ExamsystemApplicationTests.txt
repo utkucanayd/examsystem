@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: com.cloud.examsystem.ExamsystemApplicationTests
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 7.888 s - in com.cloud.examsystem.ExamsystemApplicationTests
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 7.352 s - in com.cloud.examsystem.ExamsystemApplicationTests
