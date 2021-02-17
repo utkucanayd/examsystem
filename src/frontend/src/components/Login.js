@@ -13,13 +13,17 @@ class Login extends React.Component {
             control:"",
         }
     }
+<<<<<<< HEAD
 
+=======
+>>>>>>> 409abcaf1ce3ff8b160b5aa006ebc297de055932
     handleSubmit=()=>{
         if(this.state.username!=="" && this.state.password!=="" ){
             const user={
                 username: this.state.username,
                 password: this.state.password,
             }
+<<<<<<< HEAD
             if(user.username==="student" && user.password==="1234"){
                 this.props.history.push("/examList")
             }else if(user.username==="instructor" && user.password==="1234"){
@@ -29,6 +33,13 @@ class Login extends React.Component {
             }
         }else{
             this.setState({control:"EmptyField"})
+=======
+            axios.post("/api/login/user",user).then(res=>{
+                console.log(res.data)
+            })
+        }else{
+            this.setState({control:"EmptyInput"})
+>>>>>>> 409abcaf1ce3ff8b160b5aa006ebc297de055932
         }
     }
     handleUsername=(e)=>{
@@ -38,6 +49,7 @@ class Login extends React.Component {
         this.setState({password:e.target.value})
     }
     showAlert=()=>{
+<<<<<<< HEAD
         if(this.state.control==="EmptyField"){
             return(<Alert className="alert alert-danger" color="danger">
                 Please Fill in the Required Fields!
@@ -48,6 +60,13 @@ class Login extends React.Component {
             </Alert>)
         }
         else{
+=======
+        if(this.state.control==="EmptyInput"){
+            return(<Alert className="alert alert-danger" color="danger">
+                Please Fill in the Required Fields!
+            </Alert>)
+        }else{
+>>>>>>> 409abcaf1ce3ff8b160b5aa006ebc297de055932
             return null
         }
     }
@@ -57,12 +76,19 @@ class Login extends React.Component {
             <div className="login-wrapper">
                 <div>
                     <h1>Login</h1>
+<<<<<<< HEAD
                     {this.showAlert()}
+=======
+                    <div>
+                        {this.showAlert()}
+                    </div>
+>>>>>>> 409abcaf1ce3ff8b160b5aa006ebc297de055932
                     <Form onSubmit={(e) => {
                         e.preventDefault()
                     }}>
                         <FormGroup>
                             <Label for="username">Email</Label>
+<<<<<<< HEAD
                             <Input type="text" name="user" id="username" placeholder="username" onChange={(e)=>this.handleUsername(e)}/>
                         </FormGroup>
                         <FormGroup>
@@ -73,6 +99,17 @@ class Login extends React.Component {
                             <Button type="submit" className="btn btn-primary" size="lg" color="primary" onClick={() => {
                                 this.handleSubmit()
                             }}>Submit</Button>
+=======
+                            <Input type="text" name="user" id="username" onChange={(e)=>this.handleUsername(e)} />
+                        </FormGroup>
+                        <FormGroup>
+                            <Label for="password">Password</Label>
+                            <Input type="password" name="password" id="password" onChange={(e)=>this.handlePassword(e)}/>
+                        </FormGroup>
+                        <div className="col text-right">
+                            <Button type="submit" className="btn btn-primary" size="lg" color="primary" onClick={() => this.handleSubmit()
+                            }>Submit</Button>
+>>>>>>> 409abcaf1ce3ff8b160b5aa006ebc297de055932
                         </div>
                     </Form>
                 </div>

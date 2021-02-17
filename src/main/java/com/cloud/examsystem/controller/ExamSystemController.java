@@ -26,11 +26,6 @@ public class ExamSystemController {
     }
 
 
-    @GetMapping("/user")
-    @SneakyThrows
-    public ResponseEntity<?> getUsers(){
-        return ResponseEntity.ok(examSystemService.getUsers());
-    }
 
     @PostMapping("/create/exam")
     @SneakyThrows
